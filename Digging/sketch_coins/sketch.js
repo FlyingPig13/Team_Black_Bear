@@ -1,9 +1,22 @@
 var xposn = 500
 var yposn = 75
 
+//This function will spawn a random number of coins on the screen
+var coin_maker = function(){
+  for(i = 0; i <= random(3, 10); i++){
+  fill(255, 255, 15)
+  ellipse((random(25, (width - 25))), (random(100, (height - 25))), 15, 15)
+}
+}
+
+
+
+
 function setup() {
   createCanvas(1050, 500)
   background(150, 80, 15)
+  
+  coin_maker()
 }
 
 function draw() {
@@ -38,16 +51,9 @@ var v_movement = function(){
   }
 }
 
-//This function will spawn a random number of coins on the screen
-var coin_maker = function(){
-  for(i = 0; i <= (random(3, 10)); i++){
-  fill(255, 255, 15)
-  ellipse((random(25, (width - 25))), (random(100, (height - 25))), 15, 15)
-}
-}
+
 
 var spawn = [h_movement(), v_movement()];
 var player = rect(spawn[0], spawn[1], 25, 25)
-coin_maker(3)
 player
 }
